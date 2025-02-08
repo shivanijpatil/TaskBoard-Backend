@@ -10,12 +10,12 @@ const app = express();
 const port = process.env.PORT || 8081;
 
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: "https://kazam-ev-assignment.netlify.app",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://taskboard-jet.vercel.app/",
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Welcome to TaskBoard App");
