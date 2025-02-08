@@ -3,6 +3,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import UserModel from "../models/user.model.js";
 import Joi from "joi";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const userRouter = Router();
 const key = process.env.JWT_SECRET;
