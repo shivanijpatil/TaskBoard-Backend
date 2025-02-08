@@ -48,14 +48,13 @@ const port = process.env.PORT || 8081;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://taskboard-jet.vercel.app", "http://localhost:5173"], // Remove trailing slash, add local development
+    origin: ["https://taskboard-jet.vercel.app", "http://localhost:5173"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// Add pre-flight handling
 app.options("*", cors());
 
 app.get("/", (req, res) => {
